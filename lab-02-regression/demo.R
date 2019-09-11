@@ -1,3 +1,5 @@
+##This is a copy of the original file made to understand git-hub
+
 ## Load the needed libraries
 ## Do these need (one-time) installation?
 library(tidyverse) ## Includes advanced data management and graphics
@@ -19,8 +21,18 @@ cps <- read_dta("http://courses.umass.edu/econ753/berndt/stata/chap5-cps.dta")
 names(cps)
 
 ## Basic summary statistics
-summary(cps)
-describe(cps)
+## Basic summary statistics
+view(cps) ##First 25 lines
+head(cps) ##First 5 lines
+tails(cps) ##Bottom 5 lines
+summary(cps) ##Descriptive statistics
+describe(cps) ##For one variable
+describe(cps$marr) ##For one variable
+
+stem(cps$marr) ##Un mini histograma
+stem(cps$lnwage) ##Un mini histograma
+stem(exp(cps$lnwage)) ##Se puden mezclar las funciones
+summary(exp(cps$lnwage)) 
 
 cps$ed
 mean(cps$ed)
